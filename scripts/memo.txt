@@ -1,0 +1,33 @@
+class Web_video_server:
+    ROS Pub/Sub Definition Class
+    - __init__
+    - getCompressedImage
+    - callback(ros_data)
+
+class MyHandler(BaseHTTPRequestHandler):
+    HTTP Server.
+    - self.path
+    - self.ic
+    - self.wfile
+    - self.send_response
+    - self.send_header
+    - self.end_headers
+    - do_GET
+
+class ThreadedHTTPServer(ThreadingMixIn, HTTPServer)
+    Handle requests in a separate thread.
+    - self.serve_forever
+
+
+main
+    ic = Web_video_server
+        init
+            self.subscriber
+    t = Thread(main_server, args=(argv, ic))
+    t.start()
+        Myhandler.ic = ic # making instance?
+        server = HTTPServer(MyHandler)
+        server.serve.forever()
+    main_ros()
+        rospy.init_node("web_video_server")
+        rospy.spin()

@@ -1,0 +1,7 @@
+<launch>
+	<group ns="raspirobo">
+		<node pkg="raspirobo" name="image_encoder" type="image_encoder.py"/>
+		<node pkg="raspirobo" name="action_maker" type="action_maker.py"/>
+		<node pkg="raspirobo" name="action_decoder" type="action_decoder.py"/>
+	</group>
+</launch>
